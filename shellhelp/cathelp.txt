@@ -1,0 +1,7 @@
+cat: 拼接文件或标准输入的内容，输出到标准输出
+cat -n: 为所有行增加行号
+cat -s: 压缩连续的空白行
+cat -T: 用^I表示\t
+cat file1 file2 file3: 拼接文件内容
+cat file1 | cat - file2 file3: 拼接标准输入与文件
+加了-之后可以将stdin作为命令参数，所以cat file1 | cat - file2 file3相当于cat file1 file2 file3

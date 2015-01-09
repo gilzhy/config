@@ -1,0 +1,55 @@
+find [path...] [expression]
+	1.文件名:
+	-name "*.txt": txt后缀的
+	! -name "*.txt": 除txt后缀的以外的
+	-iname "*.txt": 忽略大小写
+	find <path> \( -name "*.txt" -o -name "*.jog" \): \(和\)中的被视为整体
+	
+	find <path> -path "*.txt": 查找文件路径中匹配的
+	find <path> -regex "": 以正则表达式来查找文件路径
+	
+	2.文件类型：
+	-type f: 查找文件
+	-type d: 查找目录 
+	
+	3.目录深度
+	-maxdepth: 最大深度
+	-mindepth: 最小深度
+	-maxdepth和-mindepth应该作为find的最前面的参数，避免不必要的检查
+	
+	4.时间
+	单位为天的时间参数:
+	-atime: access time, 用户最近一次访问文件的时间
+	-mtime: modify time, 文件内容最后一次被修改的时间
+	-ctime: change time, 文件元数据(权限、所有权)最后一次被修改的时间
+		-: 小于
+		+: 大于
+	find . -type f -atime -7: 最近7天内被访问过的文件
+	find . -type f -atime 7:  恰好在7天前被最后访问的文件
+	find . -type f -atime +7: 最后一次访问发生在7天前的文件
+	
+	单位为分钟的时间参数:
+	-amin, -mmin, -cmin
+	
+	-newer file1.txt, 比file1.txt新的文件
+	
+	5.大小
+	c: Byte, w: 2Byte, b: 块(512 Byte), k: KB, M: MB, G: GB
+	find . -type f -size +2k: 大于2k的文件
+	
+	6.权限、所有权
+	find . -type f -perm 744: 权限为744的文件
+	find . -type f -user User: 所有权为User(用户名或UID)的文件
+	
+	7.操作
+	find . -type f -name "*.swp" -print: 输出
+	find . -type f -name "*.swp" -delete: 删除
+	
+	8.结合exec命令
+	find . -type f -name "output*" -exec cat {} \;>output_all
+	-exec后可接任何命令,{}表示一个匹配,会被替换成相应的文件名
+	find . -type f -mtime +10 -name "*.txt" -exec mv {} OLD \;
+	-exec只接受单个命令,需要多个命令时写到脚本中,-exec ./xx.sh {} \;
+	
+	9.跳过特定目录
+	find <path> \( -name ".git" -prune \): 跳过目录.git

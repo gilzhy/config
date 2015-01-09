@@ -1,0 +1,35 @@
+tr [OPTION]... SET1 [SET2] - Translate, squeeze, and/or delete characters from standard input, writing to standard output.
+
+tr只能通过stdin输入，并通过stdout输出，set1和set2
+是字符类或字符集，tr将来自stdin的内容从set1映射到set2.如果set1比set2长，则set2重复最后一个字符到长度与set1一样为止；如果set1比set2短，则set2超出set1的字符不管。
+
+1. 利用tr替换字符
+$ echo "HELLO WORLD" | tr 'A-Z' 'a-z'
+hello world
+cat text | tr '\t' ' ': 将\t转换为空格
+
+2. 利用tr删除字符
+tr -d set1: 删除stdin中所有的指定字符
+$ echo "Hello 123 world 456" | tr -d '0-9'
+Hello  world
+
+4. 利用tr取字符的补集
+tr -c set1: set1的补集
+$ echo "Hello 123 world 456" | tr -d -c '0-9 \n' 
+ 123  456
+
+5. 利用tr压缩字符
+tr -s 'x': 将内容中重复的字符'x'压缩为一个
+$ echo 'Hello    world    !' | tr -s ' '
+Hello world !
+$ cat file4
+111
+
+222
+
+
+333
+$ cat file4 | tr -s '\n'
+111
+222
+333

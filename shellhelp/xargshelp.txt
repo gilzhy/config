@@ -1,0 +1,30 @@
+$ cat args.txt 
+arg1
+arg2
+arg3
+$ cat args.txt | xargs 
+arg1 arg2 arg3
+$ cat args.txt | xargs -n 1
+arg1
+arg2
+arg3
+$ cat args.txt | xargs -n 2
+arg1 arg2
+arg3
+$ cat args.txt | xargs -n 3
+arg1 arg2 arg3
+$ cat cecho.sh 
+echo $*'#'
+$ cat args.txt | xargs ./cecho.sh 
+arg1 arg2 arg3#
+$ cat args.txt | xargs -n 1 ./cecho.sh 
+arg1#
+arg2#
+arg3#
+$ cat args.txt | xargs -n 2 ./cecho.sh  
+arg1 arg2#
+arg3#
+$ cat args.txt | xargs -n 3 ./cecho.sh  
+arg1 arg2 arg3#
+$ find . -type f -name "*.txt" -print0 | xargs -0 rm -f
+$ find . -type f -name "*.txt" -print0 | xargs -0 wc -l

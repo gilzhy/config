@@ -1,0 +1,2 @@
+打包压缩: tar -zcvf dir.tar.gz dir
+解包解压: tar -zxvf dir.tar.gz

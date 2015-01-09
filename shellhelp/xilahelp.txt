@@ -1,0 +1,16 @@
+Α	α	alpha
+Β	β	beta
+Γ	γ	gamma
+Δ	δ	delta
+Ε	ε	epsilon
+Ζ	ζ	zeta
+Η	η	eta
+Θ	θ	theta
+Λ	λ	lambda
+Μ	μ	mu
+Ξ	ξ	xi
+Π	π	pi
+Ρ	ρ	rho
+Σ	σ	sigma
+Φ	φ	phi
+Ω	ω	omega

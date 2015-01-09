@@ -1,0 +1,5 @@
+tee [OPTION]... [FILE]... - 复制stdin到每个文件以及stdout
+tee -a: 默认tee会将文件覆盖, -a选项后追加内容
+command | tee FILE1 FILE2
+cat a* | tee out.txt | cat -n
+用处是输出中间结果到文件中
