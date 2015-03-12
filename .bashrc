@@ -98,7 +98,7 @@ color_purple='\e[0;35m';
 color_cyan='\e[0;36m';
 color_white='\e[0;37m';
 color_end='\e[0m'
-export PS1="$color_cyan PC-\t:$color_yellow \w$color_end\n\$e"
+export PS1="$color_cyan PC-\t:$color_yellow \w$color_end\n\$ "
 
 # some more ls aliases
 alias ls='ls --color=auto'
