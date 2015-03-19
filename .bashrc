@@ -136,16 +136,21 @@ alias sz='du -sh'
 
 # alias tarhelp='echo -e "打包压缩: tar -zcvf dir.tar.gz dir\n解包解压: tar -zxvf dir.tar.gz"'
 alias tarhelp="more $HOME/shellhelp/tarhelp.txt"
+alias sorthelp="more $HOME/shellhelp/sorthelp.txt"
 alias findhelp="more $HOME/shellhelp/findhelp.txt"
 alias cathelp="more $HOME/shellhelp/cathelp.txt"
 alias teehelp="more $HOME/shellhelp/teehelp.txt"
 alias trhelp="more $HOME/shellhelp/trhelp.txt"
 alias xargshelp="more $HOME/shellhelp/xargshelp.txt"
+alias uniqshelp="more $HOME/shellhelp/uniqhelp.txt"
 alias awkhelp="more $HOME/shellhelp/awkhelp.txt"
 alias cuthelp="more $HOME/shellhelp/cuthelp.txt"
 alias xilahelp="more $HOME/shellhelp/xilahelp.txt"
+alias shellhelp="ls $HOME/shellhelp"
 
 alias python-help-str-format="more $HOME/pythonhelp/str.format.txt"
+
+alias cman='man -M /usr/local/zhman/share/man/zh_CN'
 # set -o vi
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000000
