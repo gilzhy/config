@@ -1,0 +1,60 @@
+名称: comm
+
+功能: 对两个有序文件做行的集合操作
+
+选项:
+    -1: 删除输出的第 1 列
+    -2: 删除输出的第 2 列
+    -3: 删除输出的第 3 列
+
+举例:
+    $ cat a.txt
+    apple
+    gold
+    iron
+    orange
+    silver
+    steel
+
+    $ cat b.txt
+    carrot
+    cookies
+    gold
+    orange
+
+    $ comm a.txt b.txt
+    apple
+        carrot
+        cookies
+            gold
+    iron
+            orange
+    silver
+    steel
+    第 1 列: 只出现在 a.txt 里的行
+    第 2 列: 只出现在 b.txt 里的行
+    第 3 列: 同时出现在 a.txt 和 b.txt 里的行
+
+    求 a.txt 和 b.txt 的交集:
+    $ comm a.txt b.txt -1 -2
+    gold
+    orange
+
+    求 a.txt 和 b.txt 的并集:
+    $ cat a.txt b.txt | sort | uniq
+    $ comm a.txt b.txt | sed 's/\t//g'
+    apple
+    carrot
+    cookies
+    gold
+    iron
+    orange
+    silver
+    steel
+
+    求差集 a.txt - b.txt:
+    $ comm a.txt b.txt -2 -3
+    apple
+    iron
+    silver
+    steel

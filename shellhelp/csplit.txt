@@ -1,0 +1,20 @@
+名称: csplit
+
+功能: 以某文本内容分隔文件为小文件
+
+选项:
+    -f: 指定前缀(默认前缀为 'xx')
+    -n: 指定后缀长度
+    -b: 指定后缀格式, 类似于 c 的printf
+    -s: 不显示指令执行过程
+    -z: 删除空的子文件
+
+    /REGEXP/: 从第一行知道包含 REGEXP 的匹配行, 不包括该匹配行
+    %REGEXP%: skip to, but not including a matching line
+
+    {INTEGER}: 匹配模式的重复次数, 类似 python split 函数的参数
+    {*}: 可以重复多少次就重复多少次
+
+举例:
+
+相关: split

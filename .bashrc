@@ -147,6 +147,9 @@ alias shellhelp-uniq="more $HOME/shellhelp/uniq.txt"
 alias shellhelp-awk="more $HOME/shellhelp/awk.txt"
 alias shellhelp-cut="more $HOME/shellhelp/cut.txt"
 alias shellhelp-xila="more $HOME/shellhelp/xila.txt"
+alias shellhelp-split="more $HOME/shellhelp/split.txt"
+alias shellhelp-csplit="more $HOME/shellhelp/csplit.txt"
+alias shellhelp-rename="more $HOME/shellhelp/rename.txt"
 
 alias pythonhelp-str-format="more $HOME/pythonhelp/str.format.txt"
 

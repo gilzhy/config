@@ -1,0 +1,21 @@
+名称: rename
+
+功能: 批量重命名, 支持正则表达式
+
+选项:
+
+举例:
+    将所有文件名中的 JPG 替换为 jpg:
+    rename 's/JPG/jpg/g' *
+
+    修改所有后缀为 JPG 的文件后缀为 .jpg
+    rename 's/\.JPG/\.jpg/g' *
+
+    将所有文件名中的 .txt 去掉:
+    rename 's/\.txt//g' *
+
+    为所有文件名加上 .txt 的后缀:
+    rename 's/$/\.txt/g' *
+
+    为所有文件名加上 zhyin 的前缀:
+    rename 's/^/zhyin/g' *
