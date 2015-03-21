@@ -150,6 +150,9 @@ alias shellhelp-xila="more $HOME/shellhelp/xila.txt"
 alias shellhelp-split="more $HOME/shellhelp/split.txt"
 alias shellhelp-csplit="more $HOME/shellhelp/csplit.txt"
 alias shellhelp-rename="more $HOME/shellhelp/rename.txt"
+alias shellhelp-comm="more $HOME/shellhelp/comm.txt"
+alias shellhelp-tree="more $HOME/shellhelp/tree.txt"
+alias shellhelp-re="more $HOME/shellhelp/re.txt"
 
 alias pythonhelp-str-format="more $HOME/pythonhelp/str.format.txt"
 
