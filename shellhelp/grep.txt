@@ -1,0 +1,15 @@
+名称: grep
+
+功能: 在文件或 stdin 中搜索文本.
+    grep <pattern> <filenames>
+    other command | grep <pattern>
+
+选项:
+    -E: 使用正则表达式. grep -E 相当于命令 egrep
+    --color=auto: 输出中着重标记匹配到的单词
+    -o: 只输出匹配到的文本部分(默认输出整行)
+
+举例:
+    $ grep -E "[a-z]+" <filename>
+
+    $ ls | grep -E "[0-9]{4}"
