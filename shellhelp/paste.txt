@@ -1,0 +1,36 @@
+名称: paste
+
+功能: 按列拼接文件
+
+选项:
+    -d: 指定分隔符, 默认为 \t
+
+举例:
+    $ cat file1
+    1
+    2
+    3
+    4
+    5
+
+    $ cat file2
+    a
+    b
+    c
+    d
+
+    $ paste file1 file2
+    1	a
+    2	b
+    3	c
+    4	d
+    5	
+
+    $ paste file1 file2 -d '-' > tmp.txt
+    1-a
+    2-b
+    3-c
+    4-d
+    5-
+
+相关: cat

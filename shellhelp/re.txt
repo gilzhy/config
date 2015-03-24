@@ -17,3 +17,18 @@
 | |            |   交替, 匹配|两边的任意一项            |   Oct (1st | 2rd) 匹配 Oct 1st 和 Oct 2rd             |
 | \            |   转义字符                             |   a\.txt 匹配 a.txt                                   |
 -----------------------------------------------------------------------------------------------------------------
+
+$ cat url_email.txt
+this is a line of text contains, <email> #slynux@slynux.com. </email> and email address, blog "http://www.google.com", test@yahoo.com dfdfdfsdasd;cool.hacks@gmail.com<br/><a href="http://code.google.com"><h1>Heading</h1>
+
+email 正则:
+$ cat url_email.txt | egrep -o "http://[a-zA-Z0-9._]+\.[A-Za-z]{2,3}"
+http://www.google.com
+http://code.google.com
+
+url 正则:
+$ cat url_email.txt | egrep -o "[A-Za-z0-9._]+@[A-Za-z0-9.]+\.[a-zA-Z]{2,4}"
+slynux@slynux.com
+test@yahoo.com
+cool.hacks@gmail.com
+

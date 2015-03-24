@@ -53,3 +53,5 @@ find [path...] [expression]
 	
 	9.跳过特定目录
 	find <path> \( -name ".git" -prune \): 跳过目录.git
+
+    -print0: 找到的各项以null字符(\0)为分隔符(默认为\n)

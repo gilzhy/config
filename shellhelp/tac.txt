@@ -1,0 +1,32 @@
+名称: tac
+
+功能: 逆序读文本
+
+举例:
+    $ cat file1
+    1
+    2
+    3
+
+    $ tac file1
+    3
+    2
+    1
+
+    $ cat file1 file2
+    1
+    2
+    3
+    a
+    b
+    c
+
+    $ tac file1 file2
+    3
+    2
+    1
+    c
+    b
+    a
+
+相关: cat (tac 就是cat反过来写)
