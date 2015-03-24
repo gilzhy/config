@@ -1,2 +1,57 @@
-打包压缩: tar -zcvf dir.tar.gz dir
-解包解压: tar -zxvf dir.tar.gz
+名称: tar
+
+功能: 归档打包/解包
+
+注意:
+    1. -f 必须紧跟文件名
+    2. 加上 -v 选项
+    3. tar 只能对文件归档, 不具备压缩更能
+        tar 可以通过加选项来指定压缩命令进行配合
+            -z: 指定 gzip 格式
+            -j: 指定 bunzip2 格式
+            --lzma: 指定 lzma 格式
+            -a, --auto-compress: 通过指定文件名的扩展名自动识别格式
+
+常用:
+    打包压缩: tar -zcvf dir.tar.gz dir
+    解包解压: tar -zxvf dir.tar.gz
+
+选项:
+    -f, --file <filename>: specify filename, 指定文件名
+        -f 选项必须紧接着文件名!!!
+
+    -c, --create: creat file, 创建归档文件
+        $ tar -cf file1.tar file1 file2
+        $ tar --create --file file2.tar file1 file2
+        $ tar --create -f file3.tar file1 file2
+        $ tar -c --file filr4.tar file1 file2
+
+    -x, --extract, --get: 从归档文件中提取文件
+
+    -t, --list: tell, 列出归档文件所包含的文件
+        $ tar -tf file1.tar 
+        $ tar --list --file file1.tar 
+        $ tar --list -f file1.tar 
+        $ tar -t --file file1.tar 
+
+    -A, --catenate, --concatenate: 合并多个归档文件
+        $ tar -Af file1.tar file2.tar
+
+    -d, --diff, --compare:
+        若归档文件内外有 2 个文件名相同的文件, -d 选项可以输出两者的区别
+        $ tar -df file.tar file1
+
+    -r, --append: 增加文件到归档文件中
+        $ tar -rf file.tar file1
+
+    -u, --update:
+        若归档文件内外有 2 个文件名相同的文件, -u 选项会比较两者的时间戳
+        时间戳相同则不进行操作; 外文件的时间戳更新则追加进归档文件
+        $ tar -uf file.tar file1
+
+    --delete: 从归档文件中删除文件
+        $ tar -f file.tar --delete file1 file2
+        $ tar --file file.tar --delete file1 file2
+
+    -v: verbose, 冗长模式, 输出更多细节
+        其他选项最好都配合 -v 选项, 输出更多信息
