@@ -1,0 +1,55 @@
+名称: sed
+
+功能: 配合正则表达式进行文本替换, sed 是流编辑器(stream editor)的缩写
+    sed 's/pattern/replace_string/' file
+    cat file | sed 's/pattern/replace_string/'
+    可以用单引号也可以用双引号, 区别在于双引号时变量可被识别
+
+选项:
+    -i: 对文本进行修改(见举例)
+
+    sed 's/pattern/replace_string/g' file: 所有匹配项均替换
+    sed 's/pattern/replace_string/4g' file: 第 4 个匹配项开始均替换
+
+    sed '/pattern/d' file: 去除 pattern 的匹配行
+
+    sed 中字符 & 表示匹配项(见举例)
+
+    -e: 组合多个表达式
+        sed -e 's/a/A/' -e 's/c/C/'相当于
+        sed 's/a/A/;s/c/C/'相当于
+        sed 's/a/A/' | sed 's/c/C/'
+
+举例:
+    $ cat aa.txt 
+    1 a 12 ab 123 abc 1234 abcd
+    12345 abcde 123456 abcdef
+    1234567 abcdefg
+    1 a 12 ab 123 abc 1234 abcd
+    12345 abcde 123456 abcdef
+    1234567 abcdefg
+
+    $ cat aa.txt | sed 's/[0-9]\{7\}/number/g'
+    1 a 12 ab 123 abc 1234 abcd
+    12345 abcde 123456 abcdef
+    number abcdefg
+    1 a 12 ab 123 abc 1234 abcd
+    12345 abcde 123456 abcdef
+    number abcdefg
+
+    $ cat aa.txt | sed 's/[0-9]\{7\}/[&]/g'
+    1 a 12 ab 123 abc 1234 abcd
+    12345 abcde 123456 abcdef
+    [1234567] abcdefg
+    1 a 12 ab 123 abc 1234 abcd
+    12345 abcde 123456 abcdef
+    [1234567] abcdefg
+
+    sed 默认只输出替换后的文本, 而不对文本进行修改.
+    如需替换后修改文本:
+    $ sed -i 's/pattern/replace_string/' file
+    相当于
+    $ sed 's/pattern/replace_string/' file > newfile; mv newfile file
+
+    移除文本中的空行:
+    $ sed '/^$/d' file

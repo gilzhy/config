@@ -154,6 +154,7 @@ alias shellhelp-comm="more $HOME/shellhelp/comm.txt"
 alias shellhelp-tree="more $HOME/shellhelp/tree.txt"
 alias shellhelp-re="more $HOME/shellhelp/re.txt"
 alias shellhelp-grep="more $HOME/shellhelp/grep.txt"
+alias shellhelp-sed="more $HOME/shellhelp/sed.txt"
 
 alias pythonhelp-str-format="more $HOME/pythonhelp/str.format.txt"
 

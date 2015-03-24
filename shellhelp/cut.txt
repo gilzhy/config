@@ -1,33 +1,66 @@
-1. cut -b:
+名称: cut
 
-$ ls -l
-total 24
--rw-rw-r--  1 zhangyin04 zhangyin04 2132 May 27 20:50 awkhelp.txt
--rw-rw-r--  1 zhangyin04 zhangyin04  296 May 26 10:36 cathelp.txt
--rw-rw-r--  1 zhangyin04 zhangyin04 1606 May 23 15:04 findhelp.txt
--rw-rw-r--  1 zhangyin04 zhangyin04  187 May 26 10:37 teehelp
--rw-rw-r--  1 zhangyin04 zhangyin04  843 May 26 10:31 trhelp.txt
--rw-rw-r--  1 zhangyin04 zhangyin04  562 May 26 10:38 xargshelp.txt
-$ ls -l | cut -b 55-
+功能: 按指定分界符将文本按列切分
 
-awkhelp.txt
-cathelp.txt
-findhelp.txt
-teehelp
-trhelp.txt
-xargshelp.txt
-$ ls -l | cut -b 26-35
+选项:
+    -d: 指定分界符
+    -f l1[,l2 或 -l2]: 指定输出按分界符分隔后的列
+        l1,l2 表示 l1 列和 l2 列
+        l1-l2 表示 l1 列到 l2 列
+    -s: 不输出没有分界符的行(默认输出)
+    --complement: 补集, 打印出 -f 指定的列以外的所有列
+    -b: 指定按字节输出
+    -c: 指定按字符输出
+    --output-delimiter: 指定输出分界符
 
-zhangyin04
-zhangyin04
-zhangyin04
-zhangyin04
-zhangyin04
-zhangyin04
-zhangyin04
+举例:
+    $ cat aa.txt
+    No	|	Name	|	Age
+    1	|	zhangsan	|	18
+    2	|	lisi	|	19
+    3	|	wangwu	|	20
+    hello world
 
+    $ cat aa.txt | cut -f 1
+    No
+    1
+    2
+    3
+    hello world
 
-2. cut -f:
+    $ cat aa.txt | cut -f 1-3
+    No	|	Name
+    1	|	zhangsan
+    2	|	lisi
+    3	|	wangwu
+    hello world
 
-cut -f 3-  # 以\t为分隔符,输出第3以及之后的字段
-cut -d : -f 1,3-5,7  # 以:为分隔符,输出1,3,4,5,7字段
+    $ cat aa.txt | cut -f 1,3 -s
+    No	Name
+    1	zhangsan
+    2	lisi
+    3	wangwu
+
+    $ cat aa.txt | cut -d '|' -f 1,3 -s
+    No	|	Age
+    1	|	18
+    2	|	19
+    3	|	20
+
+    $ cat aa.txt | cut -d '|' -f 1-3 --output-delimiter=';' -s
+    No	;	Name	;	Age
+    1	;	zhangsan	;	18
+    2	;	lisi	;	19
+    3	;	wangwu	;	20
+
+    $ ls -l | head -n 4
+    总用量 76
+    -rw-rw-r-- 1 jayyoung jayyoung 2476  9月  3  2014 awk.txt
+    -rw-rw-r-- 1 jayyoung jayyoung  369  9月  3  2014 cat.txt
+    -rw-rw-r-- 1 jayyoung jayyoung  972  3月 20 20:31 comm.txt
+
+    $ ls -l | head -n 4 | cut -b -10,52- --output-delimiter=$'\t'
+    总用量 
+    -rw-rw-r--	awk.txt
+    -rw-rw-r--	cat.txt
+    -rw-rw-r--	comm.txt
