@@ -137,6 +137,7 @@ alias sz='du -sh'
 # alias tarhelp='echo -e "打包压缩: tar -zcvf dir.tar.gz dir\n解包解压: tar -zxvf dir.tar.gz"'
 alias shellhelp="ls $HOME/shellhelp"
 alias shellhelp-tar="more $HOME/shellhelp/tar.txt"
+alias shellhelp-gzip="more $HOME/shellhelp/gzip.txt"
 alias shellhelp-sort="more $HOME/shellhelp/sort.txt"
 alias shellhelp-find="more $HOME/shellhelp/find.txt"
 alias shellhelp-cat="more $HOME/shellhelp/cat.txt"
@@ -156,6 +157,7 @@ alias shellhelp-re="more $HOME/shellhelp/re.txt"
 alias shellhelp-grep="more $HOME/shellhelp/grep.txt"
 alias shellhelp-sed="more $HOME/shellhelp/sed.txt"
 alias shellhelp-wget="more $HOME/shellhelp/wget.txt"
+alias shellhelp-du-df="more $HOME/shellhelp/du-df.txt"
 
 alias pythonhelp-str-format="more $HOME/pythonhelp/str.format.txt"
 

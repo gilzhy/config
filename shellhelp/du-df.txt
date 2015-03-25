@@ -1,0 +1,55 @@
+名称: du, df(见举例)
+
+功能:
+    du(disk usage): 磁盘使用情况
+    df(disk free): 磁盘可用空间
+
+    du filename1 filename2: 查看文件所占磁盘空间的大小
+    du dirname1 dirname2: 查看目录及其子目录所占磁盘空间的大小
+
+    df -h: 以易读的方式查看磁盘可用空间
+
+选项:
+    -a: 列出目录及其子目录子文件所占磁盘控件的大小
+
+    du 的默认单位为字节, 规定单位:
+    -h: 视大小而定, KB, MG, GB 等
+    -b: 字节(默认)
+    -k: KB
+    -m: MB
+    -B BLOCK_SIZE: 块, BLOCK_SIZE 以字节为单位
+
+    -c: count, 输出的最后输出总磁盘占用量
+    -s: summarize, 只输出总磁盘占用量
+
+    --max-depth: 指定子目录深度
+
+    --exclude <pattern> <dirname>: 排除 <pattern> 匹配的文件
+        $ du --exclude "*.txt" dirname
+    --exclude-from <filename> <dirname>: 排除 <filename> 中所列文件
+
+举例:
+    查看当前目录大小:
+    $ du -sh
+
+    列出目录中最大的几个文件:
+    $ du -ak Movie --max-depth=1 | sort -nrk 1 | head -n 6 | cut -f 2
+    Movie
+    Movie/蝙蝠侠前传三部曲.2005-2012.国英双语.中英字幕￡CMCT暮雨潇潇
+    Movie/Gone.Girl.2014.720p.BluRay.x264.DTS-WiKi
+    Movie/Dawn.of.the.Planet.of.the.Apes.2014.BluRay.720p.x264.DTS-HDWinG
+    Movie/The.Social.Network.720p.BluRay.x264-METiS
+    Movie/重返20岁.2015.国语.简繁中字￡CMCT小鱼
+
+    查看磁盘可用空间:
+    $ df -h
+    文件系统        容量  已用  可用 已用% 挂载点
+    /dev/sda6        74G   28G   44G   39% /
+    none            4.0K     0  4.0K    0% /sys/fs/cgroup
+    udev            1.4G  4.0K  1.4G    1% /dev
+    tmpfs           289M  1.4M  288M    1% /run
+    none            5.0M     0  5.0M    0% /run/lock
+    none            1.5G  3.3M  1.5G    1% /run/shm
+    none            100M   32K  100M    1% /run/user
+    /dev/sda2        60G   19G   42G   32% /media/c
+    /dev/sda3       160G  147G   14G   92% /media/d
