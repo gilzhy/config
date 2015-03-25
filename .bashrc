@@ -158,6 +158,8 @@ alias shellhelp-grep="more $HOME/shellhelp/grep.txt"
 alias shellhelp-sed="more $HOME/shellhelp/sed.txt"
 alias shellhelp-wget="more $HOME/shellhelp/wget.txt"
 alias shellhelp-du-df="more $HOME/shellhelp/du-df.txt"
+alias shellhelp-import="more $HOME/shellhelp/import.txt"
+alias shellhelp-convert="more $HOME/shellhelp/convert.txt"
 
 alias pythonhelp-str-format="more $HOME/pythonhelp/str.format.txt"
 

@@ -1,0 +1,18 @@
+名称: convert
+
+功能: 图片缩放/格式转换
+
+使用:
+    convert input_file output_file
+
+    指定 width 和 height:
+    $ convert input.png -resize <width>x<height> output.png
+    
+    指定 width, 按比例确定 height:
+    $ convert input.png -resize <width>x output.png
+
+    指定 height, 按比例确定 width:
+    $ convert input.png -resize <height>y output.png
+
+    按百分比缩放:
+    $ convert input.png -resize "50%" output.png

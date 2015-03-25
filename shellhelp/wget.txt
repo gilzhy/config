@@ -1,0 +1,33 @@
+名称: wget
+
+功能: 下载网页或远程文件
+
+选项:
+    -O: 指定输出文件名, 默认与 url 中的相同
+    -o: 指定日志文件, 将下载日志或进度写入文件. 默认输出到 stdout
+    -t n: 指定因网络问题中断下载时的重试次数
+        -t 0: 不停地重试
+
+    --limit-rate: 下载限速, 指定带宽
+        --limit-rate 20k
+        --limit-rate 20m
+    --quota: 指定下载文件大小上限(下载多文件时避免占用过多空间)
+    -Q: 同--quota
+        --quota 100m
+
+    -c: 断点续传
+
+    --user: 需要认证时提供帐户名
+    --password: 需要认证时提供密码
+        --user <username> --password <password>
+
+举例:
+    复制整个网站(包括所有链接)
+    $ wget --mirror --convert-links example.com
+        --convert-links: 将页面的链接地址转换为本地地址
+    或
+    $ wget -r -N -l -k <depth> url
+        -r: 递归
+        -l: 指定向下遍历的层数上限
+        -N: 使用文件的时间戳
+        -k: 同 --convert-links

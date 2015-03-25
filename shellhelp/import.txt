@@ -1,0 +1,14 @@
+名称: import
+
+功能: 截图
+
+使用:
+    截图整个屏幕:
+    $ import -window root filename.png
+
+    手动选择区域:
+    $ import filename.png
+
+    抓取特定窗口:
+    $ import -window <window id> filename.png
+        运行命令 xwininfo 后, 点击窗口可获取窗口的 id

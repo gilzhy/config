@@ -7,9 +7,9 @@
     2. 加上 -v 选项
     3. tar 只能对文件归档, 不具备压缩更能
         tar 可以通过加选项来指定压缩命令进行配合
-            -z: 指定 gzip 格式
-            -j: 指定 bunzip2 格式
-            --lzma: 指定 lzma 格式
+            -z: 归档后, 用 gzip 压缩, 后缀为 .tar.gz
+            -j: 归档后, 用 bzip2 压缩, 后缀为 .tar.bz2, 压缩比次高
+            --lzma: 归档后, 用 lzma 压缩, 后缀为 .tar.lzma, 压缩比最高
             -a, --auto-compress: 通过指定文件名的扩展名自动识别格式
 
 常用:
