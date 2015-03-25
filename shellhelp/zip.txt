@@ -1,0 +1,13 @@
+名称: zip
+
+功能: 归档+压缩/ 解压
+
+选项:
+    -r: 对目录和文件进行递归操作
+        $ zip -r file.zip dirname
+    -u: 更新压缩文件中的文件
+        $ zip -u file.zip file1
+    -d: 删除压缩文件中的文件
+        $ zip -d file.zip file1
+    -l: 列出压缩文件中的文件
+        $ unzip -l file.zip

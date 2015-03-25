@@ -1,0 +1,29 @@
+名称: gzip
+
+功能: 压缩/解压
+    注意 gzip 只能压缩单个文件或数据流
+    通常结合 tar 使用: tar 将多个文件归档, gzip 将归档文件压缩
+
+    注意 gzip, bzip2, lzma 压缩/解压后会删除源文件!!
+
+选项:
+    -l: 列出压缩文件的属性信息
+    -c: 指定输出到 stdout
+
+    -5: 指定压缩比
+        -1, --fast: 最低压缩比, 压缩速度最快
+        -9, --best: 最高压缩比, 压缩速度最慢
+
+举例:
+    压缩
+        得到 .gz: $ gzip <filename>
+        指定文件名: $ gzip -c <filename> > <otherfilename>
+
+    解压
+        $ gunzip <filename>.gz
+
+相关:
+    zcat: 将 .gz 文件中的文本 cat 到 stdout
+    bzip2/ bunzip2: 功能语法同zip, 压缩比更高, 耗时更长
+    pbzip2: 多线程 bzip2
+    lzma/ unlzma: 压缩比比 gzip, bzip2 都高
