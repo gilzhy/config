@@ -27,6 +27,7 @@ set ignorecase              "检索时忽略大小写
 
 " 编码支持
 set fileencodings=utf-8,gb18030,gbk
+set encoding=utf-8
 
 set hls                     "检索时高亮显示匹配项
 set helplang=cn             "帮助系统设置为中文
@@ -47,12 +48,12 @@ map <C-l> ggVGd
 :command Wq wq
 
 " coding
-imap () ()<left>
-imap [] []<left>
-imap "" ""<left>
-imap '' ''<left>
-imap <> <><left>
-imap {} {}<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap < <><left>
+inoremap { {}<left>
 "imap **** ****<left><left>
 "imap {} {<CR><CR>}<up><tab>
 
@@ -126,3 +127,7 @@ highlight TabLineSel term=bold cterm=bold ctermbg=White ctermfg=Black
 highlight Pmenu ctermbg=125 gui=bold
 highlight PmenuSel ctermbg=28 gui=bold
 highlight Search ctermbg=3 gui=bold
+
+au WinLeave * set nocursorline nocursorcolumn
+au WinEnter * set cursorline cursorcolumn
+set cursorline cursorcolumn"
