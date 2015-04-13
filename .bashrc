@@ -162,6 +162,8 @@ alias shellhelp-import="more $HOME/shellhelp/import.txt"
 alias shellhelp-convert="more $HOME/shellhelp/convert.txt"
 
 alias pythonhelp-str-format="more $HOME/pythonhelp/str.format.txt"
+alias pythonhelp-strftime="more $HOME/pythonhelp/strftime.txt"
+alias vimhelp-re="more $HOME/vimhelp/re.txt"
 
 alias cman='man -M /usr/local/zhman/share/man/zh_CN'
 # set -o vi
